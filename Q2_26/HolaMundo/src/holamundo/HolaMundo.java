@@ -4,6 +4,9 @@
  */
 package holamundo;
 
+import java.util.Scanner;
+
+
 /**
  *@author oscar
  */
@@ -78,8 +81,36 @@ public class HolaMundo {
         System.out.println("");
         System.out.println("");
         
-        System.out.printf("Numeros Enteros: %d",numero);    
-                
+        System.out.printf("Numeros Enteros: %d",numero); 
+        //alt + 92 => \
+        System.out.println("\nEsto es \n una muestra de\n caracteres de escape");
+        System.out.println("Luego tenemos \t este otro \t caracter de escape");
+        System.out.println("Y si quieres \"ALGO\" especial usa \" ");
+        System.out.println("");
+        //Declaracion e Inicializacion de Variable
+        int edad = 100;
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Cuantos anios tienes?");
+        edad = scan.nextInt();
+        System.out.printf("%nLa edad que ingresaste es de : %d",edad);
+        
+        String nombre = "John";
+        String apellido ="Doe";
+        String frase ="No se quien es John Doe";
+        
+        System.out.print("\nDame un nombre ");
+        nombre = scan.next();
+        
+        scan.nextLine();//Limpieza de buffer
+        System.out.print("Dame dos apellidos ");
+        apellido = scan.nextLine();
+        
+        System.out.print("Una Frase JoHN: ");
+        frase = scan.next();
+        
+        System.out.printf("%n %s  %s dijo %s",nombre,apellido,frase);
+   
     }//Fin de la Funcion Main
     
 }//Fin de Class HolaMundo
