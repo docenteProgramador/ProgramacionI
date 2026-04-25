@@ -50,15 +50,35 @@ public class HolaMundo {
     
         numeroDecimal = 15.4678;
         estado = true;
-        inicial = '@';
+        inicial = 'q';
         palabra = "hola";
         
         System.out.printf("Saludo inicial %s",palabra);
         System.out.println("");
         System.out.printf("%s Saludo Inicial",palabra);
         System.out.println("");
-        System.out.println("Saludo, %s, palabra");
-                
+        System.out.printf("Saludo, %s, palabra",palabra);
+        System.out.println("");  
+        System.out.println("---------------------------");
+        
+        System.out.println("Saludo inicial "+palabra);
+        System.out.println(palabra+" Saludo inicial");
+        System.out.println("Saludo, "+palabra+",inicial ");
+        
+        System.out.printf("Valor monetario: %f",numeroDecimal);
+        System.out.println("");
+        System.out.printf("Valor monetario: %.2f",numeroDecimal);
+        System.out.println("");
+        System.out.printf("Valor monetario: %.4f",numeroDecimal);
+        System.out.println("");
+        
+        System.out.printf("Para iniciales %c",inicial);
+        System.out.println("");
+        System.out.printf("Para iniciales %C",inicial);
+        System.out.println("");
+        System.out.println("");
+        
+        System.out.printf("Numeros Enteros: %d",numero);    
                 
     }//Fin de la Funcion Main
     
