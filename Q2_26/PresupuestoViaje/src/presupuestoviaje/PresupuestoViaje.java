@@ -37,8 +37,14 @@ public class PresupuestoViaje {
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        
         String pais = "Honduras";
-
+        int dias = 0;
+        double costoVuelo = 0.0;
+        double presupuestoDiario = 0;
+        double costoEstancia = 0;
+        double subTotal = 0;
+        
         //1ra Tarea: Mensaje de Bienvenida
         System.out.println("--------------------------------------------------");
         System.out.println("Hola\tEstas frente la aplicacion \tAventura Express");
@@ -49,6 +55,44 @@ public class PresupuestoViaje {
         pais = input.next();
         
         //3ra Tarea: Duración del Viaje
+        System.out.printf("Cuanto tiempo estaras en %s: ",pais);
+        dias = input.nextInt();
+        
+        //4ta Tarea: Captura de Costo del Vuelio
+        System.out.printf("Cuanto quieres pagar por el vuelo a %s: ",pais);
+        costoVuelo = input.nextDouble();
+        
+        //5ta Tarea: Calculo de Costo
+        /*Cálculo de Estancia Calcula el costo total de la 
+        * estancia multiplicando los días por el gasto diario. 
+        * Guarda el resultado en una nueva variable decimal 
+        * llamada costoEstancia.
+        */
+        System.out.println("Cuanto de viatico diario tienes?");
+        presupuestoDiario = input.nextDouble();
+        
+        costoEstancia = presupuestoDiario * dias;
+        
+        //Tarea 6: Subtotal del Viaje
+        //Calcula la suma del costoEstancia y el precio del vuelo.
+        subTotal = costoEstancia + costoVuelo;
+        
+  
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }//Fin de Main
     
 }//Fin de Class
