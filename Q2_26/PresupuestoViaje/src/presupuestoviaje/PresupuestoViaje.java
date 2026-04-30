@@ -44,6 +44,8 @@ public class PresupuestoViaje {
         double presupuestoDiario = 0;
         double costoEstancia = 0;
         double subTotal = 0;
+        double impuestoReservacion = 0.0;
+        double totalFinal = 0.0;
         
         //1ra Tarea: Mensaje de Bienvenida
         System.out.println("--------------------------------------------------");
@@ -77,6 +79,22 @@ public class PresupuestoViaje {
         //Calcula la suma del costoEstancia y el precio del vuelo.
         subTotal = costoEstancia + costoVuelo;
         
+        //Tarea 8: Calculo de la Reservacion
+        impuestoReservacion = subTotal * 0.05;
+        
+        //Tarea 9: Calculo Final
+        totalFinal = subTotal + impuestoReservacion;
+        
+        //Tarea 10: Voucher/Impresion de Resultados
+        System.out.println("\n");
+        System.out.println("Resumen de Boleto de Compra");
+        System.out.println("---------------------------");
+        System.out.printf("%-20s %-8s %10s %n",       "Destino:",pais, "Origen: Honduras");
+        System.out.printf("%-20s %-8d %10s %n",       "Dias de Viaje: ",dias,"VACA");
+        System.out.printf("%-20s %-8.2f %n",     "Costo de Estancia: ",costoEstancia);
+        System.out.printf("%-20s %-8.2f",        "Costo de Vuelo: ",costoVuelo);
+        System.out.println("\n------------------------------");
+        System.out.printf("%-20s %-8.2f",     "TOTAL A PAGAR: ",totalFinal);
   
         
         
