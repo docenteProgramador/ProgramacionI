@@ -35,6 +35,7 @@ public class Restaurante {
         int propina = 0;
         int costoViaje = 0;
         double totalPago = 0;
+        double subTotal = 0;
         
                 
         System.out.println("SEAN BIENVENIDOS AL DELIVERY");
@@ -67,7 +68,19 @@ public class Restaurante {
                 System.out.println("Comida del Mar abunda aqui!!");
                 costoPlato = 450;
                 costoViaje = 50;
+                subTotal = costoPlato + costoViaje;
                 
+                if(totalDinero<subTotal){
+                    System.out.println("No hay suficiente dinero");
+                    System.out.println("para comprar este plato");
+                }
+                else{
+                    ISV = (costoPlato + costoViaje) *0.15;
+                    System.out.print("Cuanto daras de propina ($$$$): ");
+                    propina = input.nextInt();
+                    totalPago = costoPlato + costoViaje + propina + ISV;
+                    System.out.printf("Total a Pagar: %.2f",totalPago);
+                }
                 break;
                 
             case 'B':
@@ -75,6 +88,17 @@ public class Restaurante {
                 System.out.println("de la Casa");
                 costoPlato = 320;
                 costoViaje = 30;
+                if(totalDinero<subTotal){
+                    System.out.println("No hay suficiente dinero");
+                    System.out.println("para comprar este plato");
+                }
+                else{
+                    ISV = (costoPlato + costoViaje) *0.15;
+                    System.out.print("Cuanto daras de propina ($$$$): ");
+                    propina = input.nextInt();
+                    totalPago = costoPlato + costoViaje + propina + ISV;
+                    System.out.printf("Total a Pagar: %.2f",totalPago);
+                }
                 
                 break;
                 
@@ -83,6 +107,17 @@ public class Restaurante {
                 System.out.println("Calmar el Hambre--- Pollo!!!");
                 costoPlato = 130;
                 costoViaje = 15;
+                if(totalDinero<subTotal){
+                    System.out.println("No hay suficiente dinero");
+                    System.out.println("para comprar este plato");
+                }
+                else{
+                    ISV = (costoPlato + costoViaje) *0.15;
+                    System.out.print("Cuanto daras de propina ($$$$): ");
+                    propina = input.nextInt();
+                    totalPago = costoPlato + costoViaje + propina + ISV;
+                    System.out.printf("Total a Pagar: %.2f",totalPago);
+                }
                 break;
                 
             case 'D':
@@ -90,6 +125,17 @@ public class Restaurante {
                 System.out.println("Baleadas");
                 costoPlato = 80;
                 costoViaje = 0;
+                if(totalDinero<subTotal){
+                    System.out.println("No hay suficiente dinero");
+                    System.out.println("para comprar este plato");
+                }
+                else{
+                    ISV = (costoPlato + costoViaje) *0.15;
+                    System.out.print("Cuanto daras de propina ($$$$): ");
+                    propina = input.nextInt();
+                    totalPago = costoPlato + costoViaje + propina + ISV;
+                    System.out.printf("Total a Pagar: %.2f",totalPago);
+                }
                 break;
                 
             case 'E':
@@ -97,6 +143,17 @@ public class Restaurante {
                 System.out.println("Claro que tenemos Sushi!!");
                 costoPlato = 600;
                 costoViaje = 300;
+                if(totalDinero<subTotal){
+                    System.out.println("No hay suficiente dinero");
+                    System.out.println("para comprar este plato");
+                }
+                else{
+                    ISV = (costoPlato + costoViaje) *0.15;
+                    System.out.print("Cuanto daras de propina ($$$$): ");
+                    propina = input.nextInt();
+                    totalPago = costoPlato + costoViaje + propina + ISV;
+                    System.out.printf("Total a Pagar: %.2f",totalPago);
+                }
                 break;
                 
             default:
@@ -105,11 +162,8 @@ public class Restaurante {
                 break;
         }//Fin del Switch
         
-        ISV = (costoPlato + costoViaje) *0.15;
-        System.out.print("Cuanto daras de propina ($$$$): ");
-        propina = input.nextInt();
-        totalPago = costoPlato + costoViaje + propina + ISV;
-        System.out.printf("Total a Pagar: %.2f",totalPago);
+        
+
 
     }//Fin de Main
     
