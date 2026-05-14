@@ -30,7 +30,8 @@ public class Temperatura {
     /**
      * Desarrollar un algoritmo en la que me permita hacer la conversion
      * de temperatura ingresada en grados farenheit para saber su valor
-     * en grados Celsius. 
+     * en grados Celsius. Los valores de la temperatura que se ingresan
+     * tienen que estar siempre abajo de 150.
      * 
      * De esta manera se puede llevar un control general de las temperaturas
      * registradas a lo largo de la semana y obtener
@@ -50,24 +51,39 @@ public class Temperatura {
         
         double tempFaren = 0;
         double tempCels = 0;
-        
-        
-        
-        
+        double acumulador = 0;
+        double promedio = 0;
         
         int dia = 1;//Valor Inicial
         //Condicion
         while(dia <= 7){
             //Instrucciones que se repiten
-            System.out.println("Dia: "+dia);
+            System.out.println("\nDia: "+dia);
             
             System.out.println("Calculadora de Conversiones");
-            System.out.print("Dime la lectura del termometro Farenheit: ");
-            tempFaren = input.nextDouble();
-        
+            
+            //Validacion de Parametros
+            do{
+                System.out.print("Dime la lectura del termometro Farenheit: ");
+                tempFaren = input.nextDouble();
+                if(tempFaren>150){
+                    System.out.println("\u001b[1;31mValor no permitido...\u001b[0m");
+                    System.out.println("\u001b[31mIngresarlo nuevamente\u001b[0m");
+                    System.out.println("tiene que estar abajo de 150");
+                    System.out.println("");
+                }//Fin del IF
+                
+            }while(tempFaren >150);//Fin del Do While
+
             //(32 °F − 32) × 5/9 = 0 °C
             tempCels = (5.0/9.0) * (tempFaren - 32);
         
+            //Concepto de Acumulador
+            acumulador = acumulador + tempCels;
+            System.out.println("--------------------------");
+            System.out.printf("Dia: %d\t Acumulador: %.2f%n",dia,acumulador);
+            System.out.println("--------------------------");
+            
             System.out.println("Valores de Temperatura");
             System.out.printf("Temp Farenheit %.2f",tempFaren);
             System.out.printf("\nTemp Celsius %.2f",tempCels);
@@ -75,7 +91,39 @@ public class Temperatura {
             //Modificador
             dia++; //Sumando de uno en uno -> dia = dia + 1
             
+        }//Fin de While 
+        
+        dia--;//-- va restando de uno en uno
+        promedio = acumulador /  dia;
+        System.out.printf("\nPromedio divido por %d: %.2f",dia,promedio);
+        
+        promedio = acumulador /  7;
+        System.out.printf("\nPromedio divido por 7: %.2f",promedio);
+         /*
+            Comparacion de Ciclos
+            While y Do While
+        El ciclo se repite siempre y cuando
+        la condicion se mantenga verdadera,
+        caso contrario (falso) se termina el ciclo
+        de repeticion.
+        */
+        /*
+        int numWHILE = 10;
+        int numDOWHILE = 10;
+        
+        System.out.println("Ciclo While");
+        while (numWHILE<5){
+            System.out.println(""+numWHILE);
+            numWHILE++;
         }//Fin de While
+        
+        System.out.println("\nCiclo Do While");
+        do{
+            System.out.println(""+numDOWHILE);
+            numDOWHILE++;
+        }while(numDOWHILE<5);
+        */      
+                
         
         
         
