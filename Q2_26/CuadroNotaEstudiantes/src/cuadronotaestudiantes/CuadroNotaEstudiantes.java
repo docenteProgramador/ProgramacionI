@@ -20,7 +20,7 @@ public class CuadroNotaEstudiantes {
      * Y promedio de periodo.
      * 
      * Boleta de Oscar Andrade
-     *                  Acum    Examen  Total   Promedio
+     * Asignatura       Acum    Examen  Total   
      * Programacion I   40      50      90
      * Disenio Web      30      40      70
      * Admin I          50      50      100
@@ -48,6 +48,20 @@ public class CuadroNotaEstudiantes {
         
         nombreEstudiante = tratamientoNombre(scan);
         nombreAsignaturas = tratamientoNombreAsignaturas(scan, FILA);
+        notasAsignaturas = ingresoNotas(scan, FILA, COLU, nombreAsignaturas);
+        
+        System.out.println("------------------------------");
+        System.out.printf("Boleta de %s %n",nombreEstudiante);
+        System.out.printf("%-15s %-8s %-8s %s\n","Asignatura","Acum","Examen","Total");
+        System.out.println("");
+        
+        for (int i = 0; i < FILA; i++) {
+            System.out.printf("%-15s %-8d %-8d %-8d", nombreAsignaturas[i],
+                                                    notasAsignaturas[i][0],
+                                                    notasAsignaturas[i][1],
+                                                    notasAsignaturas[i][2]);
+            System.out.println("");
+        }//Fin For
     }//Fin de Main
     
     /**
@@ -67,9 +81,27 @@ public class CuadroNotaEstudiantes {
     
     public static String[] tratamientoNombreAsignaturas(Scanner input, int DIM){
         String[] temporal = new String[DIM];
+        System.out.println("Dime el nombre de las asignaturas");
         for (int i = 0; i < DIM; i++) {
             temporal[i] = input.next().toUpperCase();
         }
+        return temporal;
+    }
+    
+    public static int[][] ingresoNotas(Scanner input, int DIM_F, int DIM_C,String nombres[]){
+        int[][] temporal = new int[DIM_F][DIM_C];
+        
+        for (int i = 0; i < DIM_F; i++) {
+            
+            System.out.printf("Dame el acum y examen de %s%n",nombres[i]);
+            System.out.print("Nota Acumulativa: ");
+            temporal[i][0]= input.nextInt();
+            
+            System.out.print("Nota Examen: ");
+            temporal[i][1]= input.nextInt();
+            
+            temporal[i][2] = temporal[i][0] + temporal[i][1];
+        }//Fin de Fila
         return temporal;
     }
 }// Fin de Class
