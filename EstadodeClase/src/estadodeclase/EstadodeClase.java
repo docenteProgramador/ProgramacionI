@@ -36,7 +36,7 @@ public class EstadodeClase {
             3. No se usa ";" para los bloques.
             4. La condicion es una comparacion bajo cualquiera de los siguientes 
                 elementos:
-                a. <       menor
+                a. <        menor
                 b. >        mayor
                 c. <=       menor o igual
                 D. >=       MAYOR O IGUAL
@@ -44,6 +44,8 @@ public class EstadodeClase {
                 i. !=       Distinto (signos pegados)
         */
         int cantidadAgua = 0;
+        char respuesta = '@';
+        String respuestaAmbiente = "John Doe";
         
         System.out.println("El bote es de 500 mL");
         System.out.print("Cuanto liquido dices que contiene? ");
@@ -54,6 +56,56 @@ public class EstadodeClase {
             System.out.println("Si, tiene mas de mitad");
             System.out.println("Te lo puedes beber!!!");
             System.out.println("No nos quedamos sin nada..hay suficiente");
+        }
+        input.nextLine();//Limpieza de Buffer
+        
+        System.out.println("");
+        System.out.println("El liquido que contiene es H20? (a=Si, b=no)");
+        respuesta = input.nextLine().charAt(0);
+        System.out.printf("%c \n",respuesta);
+        /*
+        System.out.println("El liquido que contiene es H20? (a=Si, b=no)");
+        respuesta = input.nextLine().charAt(1);
+        System.out.printf("%c \n",respuesta);
+        
+        System.out.println("El liquido que contiene es H20? (a=Si, b=no)");
+        respuesta = input.nextLine().charAt(2);
+        System.out.printf("%c \n",respuesta);
+        */
+        if(respuesta == 'a'){
+            //Condicion Verdadero
+            System.out.println("""
+                               Si es agua lo que contiene
+                               No es otra cosa....nada embriagante.!!
+                               """);
+        }
+        else{
+            //Condicion Falsa
+            System.out.println("""
+                               UY uy UY
+                               Que sera?...
+                               """);
+        }
+        
+        System.out.printf("\nEse bote que contiene %d mL",cantidadAgua);
+        System.out.println("\nEs amigable con el ambiente?");
+        respuestaAmbiente = input.nextLine();
+      /*
+        System.out.printf("Dato de Variable: %s",respuestaAmbiente);
+        
+        System.out.println("Seguro?");
+        respuestaAmbiente = input.nextLine().toUpperCase();
+        System.out.printf("Dato de Variable: %s",respuestaAmbiente);
+        
+        System.out.println("100% Seguro?");
+        respuestaAmbiente = input.next().toLowerCase();
+        System.out.printf("Dato de Variable: %s",respuestaAmbiente);
+        */
+        if(respuestaAmbiente.equals("Si")){
+            System.out.println("Es amigable");
+        }
+        else{
+            System.out.println("no es nada amigable");
         }
     }//Fin de Main
     
