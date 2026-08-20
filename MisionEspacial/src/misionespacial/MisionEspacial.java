@@ -84,13 +84,16 @@ public class MisionEspacial {
             
             int evento = rand.NextInt(2) + 1;
 
-            if (evento = 1) {
+            if (evento == 1) {
                 System.out.println("¡Impacto de asteroide!");
                 combustible = combustible + 50;
-            } else if (evento == 2) {
+            } else {
                 System.out.println("¡Viento solar a favor!");
                 distancia += 100;
+            }else{
+                System.out.println("No pasa nada");
             }
+            
 
             distancia = distancia + 50;
         }//Fin de While
