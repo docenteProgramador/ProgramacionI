@@ -35,24 +35,34 @@ public class AgenciaViajes {
         
         int selCiudad = 0;
         char selAventura = '@';
+        double dinero = 0;
+        
         
         System.out.println("Agencia de Viajes de Progra I");
         System.out.println("La excelencia de la eleccion..esta en sus manos");
         System.out.println("Nosotros solo propiciamos la vuelta al mundo.!!!");
-        System.out.println("1. Antigua Guatemala");
-        System.out.println("2. Cartagena");
-        System.out.println("3. Tokyo");
-        System.out.println("4. Milan");
+        
+        System.out.println("Con cuanto dinero dispones para poder viajar?");
+        dinero=sc.nextDouble();
+        
+        System.out.println("1. Antigua Guatemala ($400)");
+        System.out.println("2. Cartagena ($800)");
+        System.out.println("3. Tokyo ($1600)");
+        System.out.println("4. Milan ($1200)");
         System.out.print("Seleccione su Destino: ");
         selCiudad = sc.nextInt();
         
         switch(selCiudad){
             case 1:
-                System.out.println("Visitando Guatemala");
-                System.out.println("una ciudad colonial como");
-                System.out.println("Antigua Guatemala!");
+                if(dinero>400){
+                    System.out.println("Visitando Guatemala");
+                    System.out.println("una ciudad colonial como");
+                    System.out.println("Antigua Guatemala!");
+                }else{
+                    System.out.println("No alcanza el dinero!!");
+                }
                 break;
-                
+                        
             case 2:
                 System.out.println("Las mejores playas de ");
                 System.out.println("Colombia...!!");
@@ -70,7 +80,58 @@ public class AgenciaViajes {
                 System.out.println("Mucha aristocracia de por medio");
                 System.out.println("Milan, Italia");
                 break;
+                
+            default:
+                System.out.println("Destino no encontrado");
+                System.out.println("Ingreso incorrecto");
+                System.out.println("Lea ombe!!!");
+                break;
         }//Fin de Switch
+        
+        
+        System.out.println("Ahora....busquemos una aventura por hacer");
+        System.out.println("Con o sin ganas, pero viviendo la vida!");
+        System.out.println("A. Paracaidismo");
+        System.out.println("B. Caminar por la Tigra");
+        System.out.println("C. Montania Rusa - Six Flags");
+        System.out.println("D. Buceo con Tanque");
+        System.out.println("E. Canopy");
+        System.out.println("F. Subir un Volcan");
+        System.out.print("Dime tu aventura por hacer: ");
+        selAventura = sc.next().toUpperCase().charAt(0);//Mayuscula la escritura
+        //selAventura = sc.next().toLowerCase().charAt(0);//Minuscula la escritura
+        switch(selAventura){
+
+            case 'A':
+                System.out.println("Nos tiramos de un avion!!");
+                break;
+
+            case 'B':
+                System.out.println("Cuidado se pierden en el bosque!!");
+                break;
+
+            case 'C':
+                System.out.println("Grritemos hasta quedarnos afonicos!!");
+                break;
+
+            case 'D':
+                System.out.println("Admiremos los secretos del oceano!!");
+                break;
+
+            case 'E':
+                System.out.println("No se te ocurra quitar el seguro");
+                break;
+                
+            case 'F':
+                System.out.println("Tierra y Ceniza Volcanica entre los zapatos");
+                break;
+                
+            default:
+                System.out.println("Esa opcion, no existe");         
+        }//Find de Switch
+        
+
+        
     }//Fin Main
     
 }//Fin de Class
